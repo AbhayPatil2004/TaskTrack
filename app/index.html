@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskTrack — Mini Project 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">MINI-PROJECT 2 · WEB TESTING</p>
+      <h1>TaskTrack</h1>
+      <p class="subtitle">A simple task manager built to demonstrate functional and regression testing.</p>
+    </div>
+    <div class="hero-mark" aria-hidden="true">✓</div>
+  </header>
+
+  <main class="container">
+    <section class="panel form-panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">WORKSPACE</p><h2>Add a task</h2></div>
+        <span class="pill">Local demo</span>
+      </div>
+      <form id="task-form" novalidate>
+        <label for="task-title">Task title</label>
+        <input id="task-title" name="title" type="text" maxlength="100" placeholder="e.g. Complete Selenium test plan" autocomplete="off">
+        <p class="hint">Required · Up to 100 characters</p>
+        <div class="form-row">
+          <div class="field">
+            <label for="task-priority">Priority</label>
+            <select id="task-priority" name="priority">
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="task-due">Due date (optional)</label>
+            <input id="task-due" name="due" type="date">
+          </div>
+        </div>
+        <button type="submit" id="add-task">Add task <span aria-hidden="true">＋</span></button>
+        <p id="form-message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading list-heading">
+        <div><p class="eyebrow">YOUR WORK</p><h2>Task list</h2></div>
+        <div class="stats"><span id="total-count">0</span> total <span class="dot">·</span> <span id="completed-count">0</span> completed</div>
+      </div>
+      <div class="toolbar">
+        <label class="search-wrap" for="task-search"><span aria-hidden="true">⌕</span>
+          <input id="task-search" type="search" placeholder="Search tasks..." aria-label="Search tasks">
+        </label>
+        <select id="task-filter" aria-label="Filter tasks">
+          <option value="all">All tasks</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">☷</div>
+        <h3>No tasks yet</h3>
+        <p>Add your first task using the form above.</p>
+      </div>
+      <ul id="task-list" class="task-list" aria-label="Tasks"></ul>
+      <p class="storage-note"><span class="storage-dot"></span> Tasks are saved in this browser using local storage.</p>
+    </section>
+  </main>
+  <footer>TaskTrack · Mini-Project 2 · Selenium WebDriver & exploratory testing</footer>
+  <script src="app.js"></script>
+</body>
+</html>
